@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Content from "./Content";
+import Sidebar from "./Sidebar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>    
+       <div className="w-full p-3 flex items-center bg-primary-dark font-bold">
+              <img className="w-11 h-11 rounded-full" src="https://pbs.twimg.com/profile_images/943222884973064193/_2u9vkvx_400x400.jpg" alt=""/>
+              <h1 className="text-xl mx-4 text-white hover:text-gray-300 transform transition-colors cursor-pointer">
+                Travel Guide
+              </h1>
+      </div>
+      <div className="flex">
+        <Content/>
+      </div>
+
+    </>
+    
   );
 }
 
