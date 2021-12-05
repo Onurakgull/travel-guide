@@ -4,7 +4,6 @@ import ImageSearch from './components/ImageSearch';
 
 const Content = () => {
     const [images,setImages]=useState([]);
-    const [isLoading, setIsLoading]=useState(true);
     const [term, setTerm]=useState('');
 
     useEffect(()=>{
@@ -12,14 +11,15 @@ const Content = () => {
         .then(res=>res.json())
         .then(data=>{
             setImages(data.hits);
-            setIsLoading(false)
         })
         .catch(err=>console.log(err))
-    },[]);
+    },[term]);
 
     return (
-        <div className="container mx-auto">
-            <ImageSearch/>
+        <div className="container">
+            <div className="max-w-full">
+                <ImageSearch searchText={(text)=>setTerm(text)}/>
+            </div>
           <div className="grid grid-cols-3 gap-4">
             {images.map(image=>(
                 <ImageCard key={image.id} image={image}/>

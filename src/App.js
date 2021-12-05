@@ -1,5 +1,4 @@
 import Content from "./Content";
-import Sidebar from "./Sidebar";
 
 function App() {
   return (
